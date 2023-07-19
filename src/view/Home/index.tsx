@@ -10,7 +10,7 @@ import {
     Keyboard,
     InstagramLogo,
     FileTsx,
-    GithubLogo,
+    // GithubLogo,
     GameController
 } from '@phosphor-icons/react';
 import {Button} from '@/components';
@@ -53,11 +53,10 @@ function Home() {
     return (
         <div className={homeClasses}>
             <div className='home-tab'>
-                <div className='github-icon'>
-                    <a href='https://github.com/guokaigdg/react-enterprise-template'>
-                        <GithubLogo size={52} color='#f9f4da' />
-                    </a>
-                </div>
+                
+                    <img className='my-icon' src="src/assets/icons/png/icon-kitty-1.png" color='#f9f4da' />
+                    {/* <div className='github-icon'>
+                    </div> */}
                 {MenuLink.map((item: LinkItem) => (
                     <div key={item.name} className='btn-wrap'>
                         <Button
