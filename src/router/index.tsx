@@ -6,6 +6,7 @@ import React from 'react';
 import SuspenseLazy from '@/components/SuspenseLazy';
 import {Navigate, RouteObject} from 'react-router-dom';
 
+const DashBoard = SuspenseLazy(() => import(/* webpackChunkName:"main" */ '@/view/Home/DashBoard'));
 const Home = SuspenseLazy(() => import(/* webpackChunkName:"home" */ '@/view/Home'));
 const HomeOne = SuspenseLazy(() => import(/* webpackChunkName:"home-one" */ '@/view/Home/HomeOne'));
 const HomeTwo = SuspenseLazy(() => import(/* webpackChunkName:"home-two" */ '@/view/Home/HomeTwo'));
@@ -21,13 +22,17 @@ const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@
 const routes: RouteObject[] = [
     {
         path: '/',
-        element: <Navigate to='home/one' /> // 重定向
+        element: <Navigate to='home/main' /> // 重定向
     },
     {
         path: 'home',
         element: Home,
         children: [
             // 嵌套路由
+            {
+                path: 'main',
+                element: DashBoard
+            },
             {
                 path: 'one',
                 element: HomeOne

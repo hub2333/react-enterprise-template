@@ -3,6 +3,7 @@ import {useNavigate, Outlet, useLocation} from 'react-router-dom';
 import CX from 'classnames';
 import {observer} from 'mobx-react-lite';
 import {
+    PresentationChart,
     IconContext,
     GlobeHemisphereEast,
     HardDrives,
@@ -32,6 +33,7 @@ function Home() {
     const [activeLink, setActiveLink] = useState<string>(pathname);
 
     const MenuLink = [
+        {name: 'DashBoard', icon: <PresentationChart />, link: '/home/main'},
         {name: 'HomeOne', icon: <GlobeHemisphereEast />, link: '/home/one'},
         {name: 'Pokemon', icon: <GameController />, link: '/home/two'},
         {name: 'HomeThree', icon: <FileTsx />, link: '/home/three'},
